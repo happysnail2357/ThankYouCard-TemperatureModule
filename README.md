@@ -25,7 +25,7 @@ Data storage and retrieval should be handled carefully, as to not delay a sensor
 
 To implement solutions to both problems, I implemented a concurrent linked list class that uses fine grained synchronization. During insert and delete, 
 a thread must start at the head of the list and obtain and release the locks of the nodes it traverses in a "hand-over-hand" fashion. Using this method 
-multiple threads can traverse the list simultaneoulsy while having exclusive access to the nodes they modify. Starvation is not possible since every 
+multiple threads can traverse the list simultaneously while having exclusive access to the nodes they modify. Starvation is not possible since every 
 thread must obtain the locks in order and every lock in front of the thread will eventually become available.
 
 ### Problem 1
